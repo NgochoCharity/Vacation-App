@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+/* Login */
+
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -18,6 +20,7 @@
 
 .form input {
   font-family: "Roboto", sans-serif;
+  border-radius: 8px;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -29,6 +32,7 @@
 }
 .form button {
   font-family: "Roboto", sans-serif;
+  border-radius: 17px 0 17px 0;
   text-transform: uppercase;
   outline: 0;
   background: #C36B84;
@@ -49,13 +53,12 @@
   color: #b3b3b3;
   font-size: 12px;
 }
-.form .message a {
+.form .message span {
   color: #C36B84;
-  text-decoration: none;
 }
-.form .register-form {
+/* .form .register-form {
   display: none;
-}
+} */
 .container {
   position: relative;
   z-index: 1;
@@ -90,7 +93,41 @@
   color: #EF3B3A;
 }
 body {
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  font-family: "Roboto", sans-serif;  
+  
+}
+
+/* Settings */
+
+.settings .profile{
+  width:50%;
+  background-color: #F2CAC8;
+  margin:20px 0;
+  border-radius: 8px;
+}
+
+.settings .logout{
+  width:50%;
+  background-color: #F2CAC8;
+  margin:20px 0;
+  border-radius: 8px;
+}
+
+.settings .theme{
+  width:50%;
+  background-color: #F2CAC8;
+  margin:20px 0;
+  border-radius: 8px;
+}
+ 
+
+.settings button{
+  margin: 15px 0;
+  padding: 10px 20px 10px 20px;
+  border-radius: 17px 0 17px 0;
+  background: #C36B84;
+  border: none;
+}
+.App{
+  height: 100vh;
 }
