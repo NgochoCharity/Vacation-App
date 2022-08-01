@@ -15,6 +15,7 @@ function Login ({setIsLoggedIn, onLogin, color,setDisplay}){
         password: "",
         email:""
       }
+      
     )
 
     function handleChange(e) {
