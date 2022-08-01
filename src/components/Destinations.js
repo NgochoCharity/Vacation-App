@@ -10,7 +10,7 @@ function Destinations ({color, setColor}){
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'b1922c70f7msh135d7b1fa27b2efp15d980jsn47af833c4872',
+                'X-RapidAPI-Key': '9471844e6bmshf50205e242bf14ap121f28jsnb6ce49903f48',
                 'X-RapidAPI-Host': 'airbnb19.p.rapidapi.com'
             }
         };
@@ -24,7 +24,7 @@ function Destinations ({color, setColor}){
     }, [])
 
     const displayItems = items.map(destination =>(
-     <DestinationItem  key={destination.id} destination={destination} title={destination.title} rating={destination.starRating} bed={destination.beds} bath={destination.bathrooms} guests={destination.listingGuestLabel} price={destination.accessibilityLabel} images={destination.images[0]}/> 
+     <DestinationItem  key={destination.id} destination={destination} title={destination.title} rating={destination.starRating} bed={destination.beds} bath={destination.bathrooms} guests={destination.listingGuestLabel} price={destination.accessibilityLabel} images={destination.images}/> 
       ) )
         
     

@@ -1,11 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate} from "react-router-dom";
 
-function Settings ({setIsLoggedIn, color, setColor, handleTheme, isDark}){
+function Settings ({ color, handleTheme, isDark}){
+   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
     const navigate = useNavigate()
-
-    function handleLogout({ setIsLoggedIn}){
-      setIsLoggedIn(false)
+    console.log(isLoggedIn)
+    
+    function handleLogout(){
+      setIsLoggedIn(isLoggedIn => !isLoggedIn)
       navigate('/')
     }
     function handleDisplay(){
@@ -13,9 +16,9 @@ function Settings ({setIsLoggedIn, color, setColor, handleTheme, isDark}){
     }
    const theme = isDark ?'Light Mode':'Dark Mode'
     return(
-        <div style={{background:`${color}`}}>
-            <div className="settings">
-                <center>
+        <div className="settings"style={{background:`${color}`}}>
+            
+                <center style={{background:`${color}`}}>
                    <div className="profile"> 
                       <button onClick={handleDisplay} >Hide
                       Profile</button>
@@ -27,7 +30,7 @@ function Settings ({setIsLoggedIn, color, setColor, handleTheme, isDark}){
                    <button onClick={handleTheme}>{theme}</button>
                    </div>
                 </center>
-            </div>
+            
         </div>
     )
 }

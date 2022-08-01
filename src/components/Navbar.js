@@ -1,16 +1,16 @@
 import React from "react";
-import { NavLink} from "react-router-dom"
+import Navlinks from "./NavLinks";
 
 
-function Navbar (){
-
+function Navbar ({color, setColor}){
+    
     return(
-        <>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/Destinations">Destinations</NavLink>
-        <NavLink to="/Reservation">Reservation</NavLink>
-        <NavLink to="/Settings">Settings</NavLink>
-        </>
+        <header style={{background:`${color}`}}>
+        <h1 style={{background:`${color}`}} className="logo" >Safari</h1>
+        <nav style={{background:`${color}`}}>
+           <Navlinks color={color} setColor={setColor}  />
+        </nav>
+        </header>
     )
 }
 

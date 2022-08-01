@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
+import { Navigate } from "react-router-dom";
+
 
 function DestinationItem (destination){
 
+    const [isClicked, setIsClicked] = useState(false)
+    
+    function handleClick(){
+        setIsClicked((isClicked) => !isClicked)
+       
+    }
+      
+    
 return(
     <div key={destination.id} className="place" >
-          <img  key={destination.id} src={destination.images} alt='place'/>
+          <img  onClick={handleClick} key={destination.id} src={destination.images[0]} alt='place'/>
           <div>
         
           <div className="title">
@@ -17,15 +27,17 @@ return(
               <tr>
                 <td key={destination.id}><i className='bx bxs-bed'></i>{destination.bed}</td>
                 <td key={destination.id}><i className='bx bxs-bath' ></i>{destination.bath}</td>
-                <td key={destination.id}><i class='bx bxs-group'></i>{destination.guests}</td>
+                <td key={destination.id}><i className='bx bxs-group'></i>{destination.guests}</td>
              </tr>
              </tbody>
            </table>
            
          <p key={destination.price}>{destination.price}</p>
          </div>
+        
        </div>
 )
+ 
 }
 
 export default DestinationItem;

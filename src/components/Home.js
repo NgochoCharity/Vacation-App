@@ -1,15 +1,17 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
- function Home({isLoggedIn, color, setColor}){
+ function Home({isLoggedIn, color, setColor, display}){
      if (isLoggedIn === false) return <Navigate to="/Login" />;
-
+       console.log(display)
       function handleClick(){
-        return <Navigate to="/Destination" />
+        return <Navigate to="/Destinations" />
       }
     return (
 
-        <div style={{background:`${color}`}}>
+        <div style={{
+            background:`${color}`,
+             display:`${display}`}}>
               
             <section className="hero">
                     <div className="background-image">
