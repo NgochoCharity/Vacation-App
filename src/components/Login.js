@@ -23,25 +23,27 @@ function Login ({setIsLoggedIn, onLogin, color,setDisplay}){
           [e.target.name]: e.target.value,
         });
       }
-    // function handleSubmit(e){
-    //     e.preventDefault();
-    //     fetch("https://still-temple-92918.herokuapp.com/data", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formInput),
-    // }),
-    //    setIsLoggedIn(true)
-    //    setDisplay(null)
-    //     navigate('/')
-    // }
     function handleSubmit(e){
+
         e.preventDefault();
-        setIsLoggedIn(true)
-        setDisplay(null)
+        fetch("https://blooming-plateau-33291.herokuapp.com/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formInput),
+    }).then((response) => response.json)
+    
+       setIsLoggedIn(true)
+       setDisplay(null)
         navigate('/')
     }
+    // function handleSubmit(e){
+    //     e.preventDefault();
+    //     setIsLoggedIn(true)
+    //     setDisplay(null)
+    //     navigate('/')
+    // }
 
     function showLogin(e){
       e.preventDefault();
@@ -57,17 +59,17 @@ return (
 
     <form className="register-form" onSubmit={handleSubmit} style={{display:`${hideForm}`}}>
        <center> <h3 className="logo">Welcome </h3> </center>
-      <input  name="username" onChange={handleChange} type="text" placeholder="name"/>
-      <input  name="password" onChange={handleChange} type="password" placeholder="password"/>
-      <input  name="email" onChange={handleChange} type="text" placeholder="email address"/>
+      <input  name="username" onChange={handleChange} type="text" placeholder="name" value={formInput.username}/>
+      <input  name="password" onChange={handleChange} type="password" placeholder="password"value={formInput.password}/>
+      <input  name="email" onChange={handleChange} type="text" placeholder="email address" value={formInput.email}/>
       <button type="submit" onClick={showLogin} >create account</button>
       <p className="message">Already registered? <span onClick={showLogin} >Sign In</span></p>
       </form>
     <form className="login-form" onSubmit={handleSubmit} style={{display:`${displayForm}`}} >
     <center> <h3 className="logo">Welcome</h3> </center>
      
-      <input   name="username"  onChange={handleChange} type="text" placeholder="Username"/>
-      <input   name="password" onChange={handleChange}type="password" placeholder="Password"/>
+      <input   name="username"  onChange={handleChange} type="text" placeholder="Username" value={formInput.username}/>
+      <input   name="password" onChange={handleChange}type="password" placeholder="Password" value={formInput.password}/>
       <button type="submit" onClick={handleSubmit}>login</button>
       <p className="message">Not registered? <span >Create an account</span></p>
     </form>
